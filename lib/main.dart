@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'DetailProduk.dart';
 
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Scarlet',
+      title: 'nuhun store.com',
       home: HomePage(),
       debugShowCheckedModeBanner: false,
     );
@@ -25,90 +26,118 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Map<String, dynamic>> products = [
       {
-        'nama': 'Parfum',
-        'harga': '50000',
-        'gambar': 'https://id-test-11.slatic.net/p/b19ec5b3329eda4c62c2ce9d31c73ce5.jpg'
+        'nama': 'Samsung Galaxy A55 5G',
+        'merek': 'Samsung',
+        'harga': '5.499.000',
+        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfBtRFS1kJYXUOybqVOngcEzDSpZsA_W-fN1XsQtgbsg&s=10',
+        'deskripsi': 'Samsung Galaxy A55 5G memiliki layar Super AMOLED 6,6 inci, kamera utama 50 MP, dan baterai 5.000 mAh. Cocok untuk aktivitas sehari-hari dan hiburan.'
       },
       {
-        'nama': 'Body Lotion',
-        'harga': '40000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwkwKy4SrAW8lQ_ToZ38o5zG3i94Ds-_C5_buzboNQKg&s=10'
+        'nama': 'iPhone 15',
+        'merek': 'Apple',
+        'harga': '10.499.000',
+        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM3GbLyxnMMg4Qa4JwmhFpJsXNHT41I7b4JAo4JR6_3w&s=10',
+        'deskripsi': 'iPhone 15 hadir dengan layar Super Retina XDR, kamera utama 48 MP, dan chip A16 Bionic untuk mendukung aktivitas, fotografi, serta hiburan.'
       },
       {
-        'nama': 'Body Scrub',
-        'harga': '57000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWOJ3r05HWH_-fnB4IqE8Z9oFUrek_TL8hMa-jhHrglQ&s=10'
+        'nama': 'OPPO Reno12 5G',
+        'merek': 'OPPO',
+        'harga': '5.999.000',
+        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBvGIwo-O8w1TZCvevHr--knumwn_D_rLP_H1nfVByUA&s=10',
+        'deskripsi': 'OPPO Reno12 5G menawarkan layar AMOLED, kamera dengan dukungan AI, serta pengisian daya cepat. Cocok untuk pengguna yang suka fotografi dan membuat konten.'
       },
       {
-        'nama': 'Perfumed Shower Serum',
-        'harga': '75000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfZfM1GBj8siu3wTTQO7Rt9sLns1emq19zkUSJ_1Kwqw&s=10'
+        'nama': 'vivo V40 5G',
+        'merek': 'vivo',
+        'harga': '6.499.000',
+        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA8yz92tfyY1SK7m3zTGTCutuT6QNN5OzA3d7wYv2h5A&s=10',
+        'deskripsi': 'vivo V40 5G mengusung layar AMOLED, kamera dengan dukungan ZEISS, dan desain ramping. Pilihan menarik untuk fotografi dan penggunaan harian.'
       },
       {
-        'nama': 'Body Serum',
-        'harga': '55000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7cDBkb6AQ-YTwE1YtqpmqFJI1_1-5gddprdwSNxIFHA&s=10'
+        'nama': 'Xiaomi Redmi Note 13 Pro 5G',
+        'merek': 'Xiaomi',
+        'harga': '4.499.000',
+        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQevE2nPFw68DlFWREc8zFNhU_yvCOLktb3I0wnOnKpWg&s=10',
+        'deskripsi': 'Redmi Note 13 Pro 5G memiliki layar AMOLED 1.5K, kamera utama 200 MP, dan dukungan jaringan 5G. Cocok untuk multimedia dan fotografi.'
       },
       {
-        'nama': 'Intense Brightening AHA Body Booster',
-        'harga': '45000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRki2hl-Z7WHmHV8AkE0LRIpPgO99_lFNhfo6En1gtm1g&s=10'
-      },
-      {
-        'nama': 'Ultra Light Daily Sunscreen',
-        'harga': '58000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKKT9mzc_c0Za0A92cPUJqLdcTJ0RHcHH1x92M4XtrsA&s=10'
-      },
-      {
-        'nama': 'Hair Conditioner',
-        'harga': '65000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG7GANUXeI6evuIOYHlL2gnIkHTTf2LrMDbEfgkHPCaQ&s=10'
-      },
-      {
-        'nama': 'Brightly Ever After Serum',
-        'harga': '60000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOPKeVbRFHRpvsZwnXxDdQ8eQ97Q9QzMrMvrK0Viy0Hw&s=10'
-      },
-      {
-        'nama': '7X Ceramide Moisturizer',
-        'harga': '70000',
-        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUbsjVrDQHJNJhPNAXN9e8FhMsSaT2arj5-4alIp5kKw&s=10'
+        'nama': 'Infinix Note 40 Pro',
+        'merek': 'Infinix',
+        'harga': '3.299.000',
+        'gambar': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfEdbE_x8UVwgDvXMPR6QkyFGaCKGNU11mW61DIQwRPA&s=10',
+        'deskripsi': 'Infinix Note 40 Pro menawarkan layar AMOLED 120 Hz, kamera utama 108 MP, dan fitur pengisian daya nirkabel magnetik. Cocok untuk pengguna yang mencari fitur menarik dengan harga lebih terjangkau.'
       },
     ];
 
     return Scaffold(
+      backgroundColor: const Color(0xFFF1F3F6),
       appBar: AppBar(
-        title: const Text('Produk Scarlett'),
+        title: const Text(
+          'NUHUN STORE',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         foregroundColor: Colors.white,
-        backgroundColor: Colors.pinkAccent,
+        backgroundColor: const Color.fromARGB(255, 75, 154, 202),
       ),
       body: ListView.builder(
+        padding: const EdgeInsets.all(12),
         itemCount: products.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            leading: Image.network(
-              products[index]['gambar'],
-              width: 60,
-              height: 60,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return const Icon(Icons.image_not_supported);
-              },
-            ),
-            title: Text(products[index]['nama']),
-            subtitle: Text('Rp ${products[index]['harga']}'),
-            trailing: const Icon(Icons.chevron_right),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => DetailProduk(
-                    item: products[index],
+          return Card(
+            color: Colors.white,
+            margin: const EdgeInsets.only(bottom: 12),
+            elevation: 2,
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(12),
+              leading: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.network(
+                  products[index]['gambar'],
+                  width: 65,
+                  height: 65,
+                  fit: BoxFit.contain,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const SizedBox(
+                      width: 65,
+                      height: 65,
+                      child: Icon(Icons.smartphone, size: 40),
+                    );
+                  },
+                ),
+              ),
+              title: Text(
+                products[index]['nama'],
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF172554),
+                ),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 6),
+                child: Text(
+                  'Rp ${products[index]['harga']}',
+                  style: const TextStyle(
+                    color: Color(0xFF475569),
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
-              );
-            },
+              ),
+              trailing: const Icon(
+                Icons.chevron_right,
+                color: Color(0xFF172554),
+              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailProduk(
+                      item: products[index],
+                    ),
+                  ),
+                );
+              },
+            ),
           );
         },
       ),

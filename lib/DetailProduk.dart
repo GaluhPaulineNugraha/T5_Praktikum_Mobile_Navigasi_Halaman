@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class DetailProduk extends StatelessWidget {
@@ -5,112 +6,114 @@ class DetailProduk extends StatelessWidget {
 
   const DetailProduk({super.key, required this.item});
 
-  static const Map<String, String> deskripsiProduk = {
-    'Parfum':
-        'Parfum dengan aroma segar dan tahan lama sepanjang hari. Wangi lembut yang cocok dipakai untuk aktivitas harian maupun acara spesial.',
-    'Body Lotion':
-        'Lotion yang melembapkan kulit tubuh secara intens, membuat kulit terasa halus, lembut, dan harum seharian. Teksturnya ringan dan cepat meresap.',
-    'Body Scrub':
-        'Scrub tubuh yang membantu mengangkat sel kulit mati dan kotoran, sehingga kulit tampak lebih cerah, halus, dan segar.',
-    'Perfumed Shower Serum':
-        'Serum mandi dengan kandungan pelembap dan wangi mewah. Membersihkan sekaligus menjaga kulit tetap lembap setelah mandi.',
-    'Body Serum':
-        'Serum tubuh berformula ringan untuk membantu mencerahkan dan menutrisi kulit, sehingga tampak sehat dan glowing.',
-    'Intense Brightening AHA Body Booster':
-        'Body booster dengan kandungan AHA yang membantu eksfoliasi dan mencerahkan area tubuh yang kusam secara bertahap.',
-    'Ultra Light Daily Sunscreen':
-        'Tabir surya bertekstur sangat ringan untuk melindungi kulit dari sinar UV setiap hari. Tidak lengket dan nyaman dipakai.',
-    'Hair Conditioner':
-        'Kondisioner yang membantu melembutkan rambut, mengurangi kusut, dan membuat rambut terasa halus serta mudah diatur.',
-    'Brightly Ever After Serum':
-        'Serum wajah yang membantu mencerahkan kulit, menyamarkan noda hitam, dan membuat wajah tampak lebih segar dan bercahaya.',
-    '7X Ceramide Moisturizer':
-        'Pelembap dengan 7 jenis ceramide yang membantu memperkuat skin barrier dan menjaga kelembapan kulit sepanjang hari.',
-  };
-
   @override
   Widget build(BuildContext context) {
     final String nama = item['nama'];
+    final String merek = item['merek'];
     final String harga = item['harga'];
     final String gambar = item['gambar'];
-    final String deskripsi =
-        deskripsiProduk[nama] ?? 'Deskripsi produk belum tersedia.';
+    final String deskripsi = item['deskripsi'];
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: const Color(0xFFF1F3F6),
       appBar: AppBar(
-        title: const Text('Detail Produk Scarlet'),
+        title: const Text(
+          'DETAIL PRODUK',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
         centerTitle: true,
         foregroundColor: Colors.white,
-        backgroundColor: Colors.pinkAccent,
+       backgroundColor: const Color.fromARGB(255, 75, 154, 202),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(24),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-        
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.network(
-                  gambar,
-                  width: 260,
-                  height: 260,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return const Icon(
-                      Icons.image_not_supported,
-                      size: 80,
-                      color: Colors.grey,
-                    );
-                  },
+        padding: const EdgeInsets.all(20),
+        child: Card(
+          color: Colors.white,
+          elevation: 3,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.network(
+                    gambar,
+                    width: 260,
+                    height: 260,
+                    fit: BoxFit.contain,
+                    errorBuilder: (context, error, stackTrace) {
+                      return const SizedBox(
+                        width: 260,
+                        height: 260,
+                        child: Icon(
+                          Icons.smartphone,
+                          size: 100,
+                          color: Color(0xFF64748B),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-              ),
-              const SizedBox(height: 24),
-
-              Text(
-                nama,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87,
+                const SizedBox(height: 24),
+                Text(
+                  merek.toUpperCase(),
+                  style: const TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF64748B),
+                    letterSpacing: 2,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 8),
-
-              Text(
-                'Rp $harga',
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.pinkAccent,
+                const SizedBox(height: 8),
+                Text(
+                  nama,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF172554),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 20),
-
-              const Text(
-                'Deskripsi Produk',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                const SizedBox(height: 12),
+                Text(
+                  'Rp $harga',
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    fontSize: 23,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0xFF334155),
+                  ),
                 ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                deskripsi,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 14,
-                  height: 1.5,
-                  color: Colors.grey.shade700,
+                const SizedBox(height: 24),
+                const Divider(color: Color(0xFFE2E8F0)),
+                const SizedBox(height: 12),
+                const Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Deskripsi Produk',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF172554),
+                    ),
+                  ),
                 ),
-              ),
-            ],
+                const SizedBox(height: 10),
+                Text(
+                  deskripsi,
+                  textAlign: TextAlign.justify,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    height: 1.7,
+                    color: Color(0xFF475569),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
